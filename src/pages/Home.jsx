@@ -46,12 +46,24 @@ const Home = () => {
 
   return (
     <div className="parent pb-3">
-      <header className="header">
+      <header className="header d-flex align-items-center">
         <h1 onClick={() => navigate("/")}>Movies</h1>
 
-        <form action="" onSubmit={searchMovies}>
-          <input type="text" onChange={(e) => setSearchKey(e.target.value)} />
-          <button type="submit">Search</button>
+        <form action="" onSubmit={searchMovies} className="d-flex">
+          <input
+            className="bg-dark text-white ps-2 mx-2 rounded-2"
+            type="text"
+            placeholder="Search Movie"
+            onChange={(e) => setSearchKey(e.target.value)}
+            style={{
+              outline: "none",
+              border: "none",
+              width: "150px",
+            }}
+          />
+          <button className="btn btn-dark" type="submit">
+            Search
+          </button>
         </form>
       </header>
 
