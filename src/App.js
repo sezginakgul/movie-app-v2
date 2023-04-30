@@ -1,7 +1,16 @@
 import "./App.css";
+import MovieContextProvider from "./context/MovieContextProvider";
+import { BrowserRouter } from "react-router-dom";
+import AppRouter from "./routes/AppRouter";
 
 function App() {
-  return <div className="App"></div>;
+  return (
+    <BrowserRouter>
+      <MovieContextProvider>
+        <AppRouter />
+      </MovieContextProvider>
+    </BrowserRouter>
+  );
 }
 
 export default App;
